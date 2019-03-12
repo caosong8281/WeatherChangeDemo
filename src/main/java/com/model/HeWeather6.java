@@ -1,5 +1,10 @@
 package com.model;
 
+/**
+ * 
+ * @author cs
+ *
+ */
 public class HeWeather6 {
 
     private Basic basic;
