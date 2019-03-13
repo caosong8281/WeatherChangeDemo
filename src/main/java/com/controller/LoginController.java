@@ -29,7 +29,6 @@ public class LoginController {
     	String[] cities = cityList.split(",");
     	List<String> cList = new ArrayList<>();
     	for (String city : cities) {
-    		System.out.println(city);
     		cList.add(city);
     	}
     	model.addAttribute(ConstantUtils.CITY_LIST, cList);

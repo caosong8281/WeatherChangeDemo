@@ -107,6 +107,12 @@ var weatherCode = [
 				"key" : "956bc183fdf646b69a19a1c27ae2d501"
 			},
 			success : function(data, status) {
+				if (typeof(data.HeWeather6[0].now) == "undefined") {
+					$("#weather").hide();
+					alert("there is no weather info for this city");
+					return;
+				}
+				$("#weather").show();
 				var citycode = data.HeWeather6[0].now.cond_code; // citycode
 				var temperature = data.HeWeather6[0].now.tmp + "°C"; // temperature;
 				var wind = data.HeWeather6[0].now.wind_spd + "km/h"; // windspeed;		
@@ -143,7 +149,7 @@ var weatherCode = [
 </select>
 <br>
 <br>
-<table border="1">
+<table border="1" id="weather">
 <tr><td>city:</td><td id="cityName"></td></tr>
 <tr><td>update time:</td><td id="updateTime"></td></tr>
 <tr><td>Weather:</td><td id="Weather"></td></tr>
